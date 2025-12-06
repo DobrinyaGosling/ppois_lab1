@@ -88,7 +88,7 @@ class PlaceOrderUseCase:
             raise CartEmptyError(cart.cart_id)
 
     def _assign_courier(self, zone: str) -> Courier:
-        available = self.courier_repository.list_available(zone)
+        available = self.courier_repository.list_availablpayment_gatewaye(zone)
         if not available:
             raise CourierUnavailableError(zone)
         return available[0]
